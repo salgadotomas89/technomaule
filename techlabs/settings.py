@@ -124,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 #STATICFILES_DIRS = [BASE_DIR / 'static']  # Directorio para archivos estáticos del proyecto
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 if os.environ.get('VERCEL_ENV') == 'production':
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
