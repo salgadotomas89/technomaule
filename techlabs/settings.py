@@ -124,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']  # Directorio para archivos estáticos del proyecto
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Directorio para collectstatic
+STATIC_ROOT = BASE_DIR / 'staticfiles_build'  # Directorio para collectstatic
    
 # Configuración para archivos de medios (si los necesitas)
 MEDIA_URL = '/media/'
