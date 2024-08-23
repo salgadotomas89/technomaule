@@ -1,0 +1,146 @@
+:root {
+    --primary-color: #1e90ff;
+    --secondary-color: #f8f9fa;
+    --text-color: #333;
+    --light-text: #fff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    font-size: 18px; /* Aumentamos el tamaño base de la fuente */
+}
+
+.navbar {
+    transition: background-color 0.3s ease;
+
+}
+
+.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.hero {
+    background: url('https://images.unsplash.com/photo-1588508065123-287b28e013da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    color: var(--light-text);
+    position: relative;
+
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+}
+
+.hero-content {
+    height: 100%;
+}
+
+.hero h1 {
+    font-size: 4.5rem; /* Aumentamos ligeramente el tamaño */
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.8rem; /* Aumentamos el tamaño */
+}
+
+.cta-form input, .cta-form button {
+    font-size: 1.3rem; /* Aumentamos el tamaño */
+    padding: 0.75rem 1.5rem;
+}
+
+.section-title {
+    font-size: 3.5rem; /* Aumentamos el tamaño */
+    font-weight: 700;
+    margin-bottom: 2.5rem; /* Aumentamos el margen inferior */
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 120px; /* Aumentamos el ancho del subrayado */
+    height: 4px;
+    background: var(--primary-color);
+    margin: 25px auto 0; /* Ajustamos el margen superior */
+}
+
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    min-height: 400px; /* Establecemos una altura mínima */
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.service-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-card .card-title {
+    font-size: 1.8rem; /* Aumentamos el tamaño */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.service-card .card-text {
+    font-size: 1.2rem; /* Aumentamos el tamaño */
+    flex-grow: 1;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form input, .contact-form textarea {
+    font-size: 1.2rem; /* Aumentamos el tamaño */
+    padding: 0.75rem;
+}
+
+.contact-form button {
+    font-size: 1.3rem; /* Aumentamos el tamaño */
+    padding: 0.75rem 2rem;
+}
+
+/* Estilos adicionales para mejorar la responsividad */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero p {
+        font-size: 1.4rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .service-card {
+        min-height: 300px;
+    }
+    
+    .service-card .card-title {
+        font-size: 1.5rem;
+    }
+    
+    .service-card .card-text {
+        font-size: 1.1rem;
+    }
+}
+

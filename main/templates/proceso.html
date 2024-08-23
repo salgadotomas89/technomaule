@@ -1,0 +1,21 @@
+<section id="proceso" class="section py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Nuestro Proceso</h2>
+        <div class="diagram-container">
+            <pre class="mermaid">
+                graph TD
+                A[Cliente solicita servicio] -->|Paso 1| B(TechLabs recoge dispositivo)
+                B -->|Paso 2| C{Diagnóstico}
+                C -->|Problema identificado| D[Propuesta de reparación]
+                C -->|No se identifica problema| E[Informe al cliente]
+                D -->|Cliente acepta| F[Reparación]
+                D -->|Cliente rechaza| G[Devolución del dispositivo]
+                F --> H[Pruebas de funcionamiento]
+                H -->|Éxito| I[Entrega al cliente]
+                H -->|Falla| C
+                E --> I
+                G --> I
+            </pre>
+        </div>
+    </div>
+</section>
