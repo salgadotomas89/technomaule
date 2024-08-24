@@ -119,10 +119,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']  # Directorio para archivos estáticos del proyecto
+#STATICFILES_DIRS = [BASE_DIR / 'static']  # Directorio para archivos estáticos del proyecto
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+if os.environ.get('VERCEL_ENV') == 'production':
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+   
 
    
 # Configuración para archivos de medios (si los necesitas)
@@ -132,5 +136,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
 
 
