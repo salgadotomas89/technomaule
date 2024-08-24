@@ -3,11 +3,11 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center text-center">
                 <div class="col-12">
-                    <h1 class="mb-4">MANTENCION DE CALIDAD PARA TUS DISPOSITIVOS</h1>
+                    <h1 id="typewriter-title" class="mb-4"></h1>
                     <p class="mb-5">Soluciones rápidas para computadores e impresoras.</p>
                     <form class="cta-form">
                         <div class="input-group mb-3 justify-content-center">
-                            <input type="email" class="form-control" style="max-width: 400px;" placeholder="Ingresa tu correo electrónico" aria-label="Correo electrónico">
+                            <input type="fono" class="form-control" style="max-width: 400px;" placeholder="Ingresa tu telefono" aria-label="+569-12345678">
                             <button class="btn btn-primary" type="button">SOLICITAR SERVICIO</button>
                         </div>
                     </form>
@@ -16,3 +16,23 @@
         </div>
     </div>
 </section>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const title = "MANTENCION DE CALIDAD PARA TUS DISPOSITIVOS";
+      const typewriterElement = document.getElementById('typewriter-title');
+      let i = 0;
+    
+      function typeWriter() {
+        if (i < title.length) {
+          typewriterElement.innerHTML += title.charAt(i);
+          i++;
+          setTimeout(typeWriter, 100); // Ajusta este valor para cambiar la velocidad de escritura
+        }
+      }
+    
+      typeWriter();
+    });
+</script>
+
