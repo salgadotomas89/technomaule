@@ -122,10 +122,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']  # Directorio para archivos estáticos del proyecto
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-if os.environ.get('VERCEL_ENV') == 'production':
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
    
 # Configuración para archivos de medios (si los necesitas)
 MEDIA_URL = '/media/'
