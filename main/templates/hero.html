@@ -1,20 +1,23 @@
 <section id="inicio" class="hero">
-    <div class="hero-overlay">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center text-center">
-                <div class="col-12">
-                    <h1 id="typewriter-title" class="mb-4"></h1>
-                    <p class="mb-5">Soluciones rápidas para computadores e impresoras.</p>
-                    <form class="cta-form">
-                        <div class="input-group mb-3 justify-content-center">
-                            <input type="fono" class="form-control" style="max-width: 400px;" placeholder="Ingresa tu telefono" aria-label="+569-12345678">
-                            <button class="btn btn-primary" type="button">SOLICITAR SERVICIO</button>
-                        </div>
-                    </form>
-                </div>
+  <div class="hero-overlay">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center text-center">
+        <div class="col-12">
+          <h1 id="typewriter-title" class="mb-4"></h1>
+          <p class="mb-5">Soluciones rápidas para computadores e impresoras.</p>
+          <form id="solicitud-form" class="mb-3 justify-content-center">
+            <div class="input-group" style="max-width: 450px; margin: 0 auto;">
+              <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="ingresa tu telefono" required style="max-width: 200px;">
+              <button type="submit" class="btn btn-primary">SOLICITAR SERVICIO</button>
             </div>
+          </form>
+          <div id="mensaje-exito" class="alert alert-primary" style="display: none; max-width: 450px; margin: 0 auto;">
+            Nos contactaremos lo más pronto posible.
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
 
