@@ -1,21 +1,206 @@
-<section id="proceso" class="section py-5">
-    <div class="container">
-        <h2 class="section-title text-center mb-5">Nuestro Proceso</h2>
-        <div class="diagram-container">
-            <pre class="mermaid">
-                graph TD
-                A[Cliente solicita servicio] -->|Paso 1| B(TechLabs recoge dispositivo)
-                B -->|Paso 2| C{Diagnóstico}
-                C -->|Problema identificado| D[Propuesta de reparación]
-                C -->|No se identifica problema| E[Informe al cliente]
-                D -->|Cliente acepta| F[Reparación]
-                D -->|Cliente rechaza| G[Devolución del dispositivo]
-                F --> H[Pruebas de funcionamiento]
-                H -->|Éxito| I[Entrega al cliente]
-                H -->|Falla| C
-                E --> I
-                G --> I
-            </pre>
+{% load static %}
+
+
+    <style>
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #1e90ff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #1e90ff;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        .timeline-item:nth-child(even)::after {
+            left: -16px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .timeline-icon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            right: -25px;
+            background-color: #1e90ff;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .timeline-item:nth-child(even) .timeline-icon {
+            left: -25px;
+        }
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .reveal-item.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-item::after {
+                left: 15px;
+            }
+            .timeline-item:nth-child(even) {
+                left: 0%;
+            }
+            .timeline-item:nth-child(even)::after {
+                left: 15px;
+            }
+            .timeline-icon {
+                left: 6px;
+                right: auto;
+            }
+        }
+    </style>
+
+    <section id="proceso" class="section py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Nuestro Proceso de Servicio</h2>
+            <div class="timeline">
+                <div class="timeline-item reveal-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>1. Solicitud de Servicio</h3>
+                        <p>El cliente nos contacta para solicitar un servicio.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>2. Coordinación</h3>
+                        <p>Nos ponemos en contacto y coordinamos el retiro del dispositivo.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>3. Diagnóstico</h3>
+                        <p>Realizamos un diagnóstico detallado del dispositivo. El costo de retiro + diagnóstico es de $10,000, que se incluirá en el precio total si se procede con la reparación.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>4. Propuesta de Solución</h3>
+                        <p>Presentamos al cliente una propuesta de solución con el costo estimado.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>5. Decisión del Cliente</h3>
+                        <p>El cliente decide si proceder con la reparación o no.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>6. Reparación o Devolución</h3>
+                        <p>Si el cliente acepta, procedemos con la reparación. Si no, devolvemos el dispositivo.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>7. Pruebas Finales</h3>
+                        <p>Realizamos pruebas exhaustivas para asegurar el correcto funcionamiento.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>8. Entrega</h3>
+                        <p>Entregamos el dispositivo reparado al cliente.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const revealItems = document.querySelectorAll('.reveal-item');
+
+        const revealOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealOnScroll.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        revealItems.forEach(item => {
+            revealOnScroll.observe(item);
+        });
+    });
+    </script>
