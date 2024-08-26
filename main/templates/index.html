@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TechnoMaule: Reparación profesional de computadores e impresoras. Soluciones rápidas y confiables para tus dispositivos tecnológicos en la región del Maule.">
-    <title>TechnoMaule - Servicios de Reparación Tecnológica</title>
+    <title>TechnoMaule - Servicio Técnico en San Clemente | Mantención de Computadores y Más</title>
+    <meta name="description" content="TechnoMaule ofrece servicio técnico de computadores, instalación de programas y mantenimiento de impresoras en San Clemente. ¡Soluciones tecnológicas locales y confiables!">
+    <meta name="keywords" content="servicio técnico, San Clemente, reparación computadores, instalación programas, mantenimiento impresoras">
+    <link rel="canonical" href="https://www.technomaule.cl/">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -47,6 +50,49 @@
     <script src="{% static 'js/proceso.js' %}" defer></script>
     <script src="{% static 'js/solicitud-hero.js' %}" defer></script>
     <script src="{% static 'js/servicios.js' %}" defer></script>
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "TechnoMaule",
+          "image": "https://www.technomaule.cl/static/images/logo.png",
+          "description": "Servicio técnico de computadores y soluciones tecnológicas en San Clemente",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Principal 123",
+            "addressLocality": "San Clemente",
+            "addressRegion": "Maule",
+            "postalCode": "3380000",
+            "addressCountry": "CL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -35.5372,
+            "longitude": -71.4872
+          },
+          "url": "https://www.technomaule.cl",
+          "telephone": "+56912345678",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ],
+          "sameAs": [
+            "https://www.facebook.com/TechnoMaule",
+            "https://www.instagram.com/TechnoMaule"
+          ]
+        }
+        </script>
 
 </body>
 </html>
