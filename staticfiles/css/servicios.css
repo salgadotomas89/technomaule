@@ -9,6 +9,7 @@
 .service-item {
     cursor: pointer;
     transition: opacity 0.3s ease, color 0.3s ease;
+    margin-bottom: 2rem;
 }
 
 .service-item:not(.active) {
@@ -35,14 +36,7 @@
     width: 95%;
     overflow: hidden;
     position: relative;
-}
-
-.service-image-container {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    border-radius: 20px; /* Ajusta este valor según prefieras */
+    border-radius: 20px;
 }
 
 .service-image {
@@ -53,9 +47,43 @@
     height: 100%;
     object-fit: cover;
     display: none;
-    border-radius: 20px; /* Ajusta este valor según prefieras */
+    border-radius: 20px;
 }
 
 .service-image.active {
     display: block;
+}
+
+.service-image-mobile {
+    margin-bottom: 1rem;
+}
+
+.service-image-mobile img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+    #servicios .row {
+        min-height: auto;
+    }
+
+    .service-item {
+        opacity: 1;
+        margin-bottom: 2rem;
+    }
+
+    .service-content {
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .service-item:not(.active) {
+        opacity: 0.5;
+    }
+
+    .service-item.active, .service-item:hover {
+        opacity: 1;
+    }
 }
