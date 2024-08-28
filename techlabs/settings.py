@@ -143,6 +143,7 @@ if os.environ.get('VERCEL_ENV') == 'production':
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
    
 
    
