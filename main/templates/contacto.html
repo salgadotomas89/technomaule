@@ -24,10 +24,14 @@
             </div>
           </form>
           <div id="mensaje-exito" class="alert alert-success mt-3" style="display: none;">
-            Su solicitud ha sido enviada con éxito. Nos pondremos en contacto con usted pronto.
+            <h4 class="alert-heading">¡Gracias por contactarnos!</h4>
+            <p>Su solicitud ha sido enviada con éxito. Nos pondremos en contacto con usted pronto.</p>
           </div>
           <div id="mensaje-error" class="alert alert-danger mt-3" style="display: none;">
             Ha ocurrido un error al enviar su solicitud. Por favor, inténtelo de nuevo.
+          </div>
+          <div id="mensaje-adicional" class="alert alert-info mt-3" style="display: none;">
+            <p>Gracias por contactarnos, Si necesita asistencia inmediata, por favor llámenos al: <strong>+569-97966996</strong></p>
           </div>
         </div>
       </div>
@@ -44,7 +48,7 @@
     var formDataObj = {};
     formData.forEach((value, key) => {formDataObj[key] = value});
     console.log("Datos del formulario:", formDataObj);
-  
+
     fetch('/enviar-contacto/', {
       method: 'POST',
       body: formData
@@ -52,9 +56,15 @@
     .then(response => response.json())
     .then(data => {
       if (data.status === 'success') {
+        // Ocultar el formulario
+        document.getElementById('contactForm').style.display = 'none';
+        // Mostrar el mensaje de éxito
         document.getElementById('mensaje-exito').style.display = 'block';
         document.getElementById('mensaje-error').style.display = 'none';
-        document.getElementById('contactForm').reset();
+        // Mostrar el mensaje adicional
+        setTimeout(() => {
+          document.getElementById('mensaje-adicional').style.display = 'block';
+        }, 2000); // Muestra el mensaje adicional después de 2 segundos
       } else {
         throw new Error(data.message);
       }

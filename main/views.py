@@ -1,8 +1,7 @@
 import json
 from django.http import JsonResponse
-from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-
+from django.shortcuts import render
 from main.models import Solicitud
 
 
@@ -12,6 +11,7 @@ from main.models import Solicitud
 def inicio(request):
 
     return render(request, 'index.html')
+
 
 
 @csrf_exempt
