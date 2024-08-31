@@ -1,0 +1,57 @@
+#contacto {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+#contacto .section-title {
+    color: #333;
+    margin-bottom: 40px;
+}
+
+#contactForm {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+#contactForm .form-control {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 0;
+    padding: 15px 0;
+    font-size: 1.4rem; /* Cambiado de 1.5rem a 1.4rem */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+#contactForm .form-control:focus {
+    box-shadow: none;
+    border-color: #007bff;
+}
+
+#contactForm textarea.form-control {
+    min-height: 120px;
+}
+
+#contactForm .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.4rem; /* Cambiado de 1.5rem a 1.4rem */
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+#contactForm .btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.alert {
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}

@@ -23,7 +23,7 @@ body {
 }
 
 .hero {
-    background: url('../images/back3.jpeg') no-repeat center center;
+    background: url('../images/back3.png') no-repeat center center;
     background-size: cover;
     height: 100vh;
     color: var(--light-text);
